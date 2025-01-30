@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "no-thanks-optimizer"
+version = "0.1.0"
+description = ""
+authors = ["Chris McPherson <christophermcpherson@1848ventures.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^2.1.2"
+gymnasium = "^1.0.0"
+ray = {extras = ["rllib"], version = "^2.37.0"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

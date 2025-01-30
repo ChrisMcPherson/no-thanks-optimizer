@@ -1,0 +1,5 @@
+Iteration 1, Best Reward Mean: -195.50, Checkpoint Path: /var/folders/zp/9rq_grx133ngp6kcbgsbjbyh0000gn/T/tmpq7bagfbh
+Iteration 2, Best Reward Mean: -191.41, Checkpoint Path: /var/folders/zp/9rq_grx133ngp6kcbgsbjbyh0000gn/T/tmphd4myisq
+Iteration 4, Best Reward Mean: -189.76, Checkpoint Path: /var/folders/zp/9rq_grx133ngp6kcbgsbjbyh0000gn/T/tmpahlfex4i
+Iteration 28, Best Reward Mean: -186.97, Checkpoint Path: /var/folders/zp/9rq_grx133ngp6kcbgsbjbyh0000gn/T/tmpqg8sr1e2
+Iteration 68, Best Reward Mean: -180.68, Checkpoint Path: /var/folders/zp/9rq_grx133ngp6kcbgsbjbyh0000gn/T/tmp8bhhkxn_

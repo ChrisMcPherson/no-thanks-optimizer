@@ -1,0 +1,74 @@
+{
+    "configurations": [
+        {
+            "type": "debugpy",
+            "request": "launch",
+            "name": "Play No Thanks",
+            "program": "${workspaceFolder}/${input:programName}",
+            "console": "integratedTerminal",
+            "args": [
+                "--checkpoint", "/var/folders/zp/9rq_grx133ngp6kcbgsbjbyh0000gn/T/tmpgtb24k1w"
+            ]
+        },
+        {
+            "type": "debugpy",
+            "request": "launch",
+            "name": "Play No Thanks Multi Policy",
+            "program": "${workspaceFolder}/no_thanks_rl_play_multi_policy.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--checkpoint", "/var/folders/zp/9rq_grx133ngp6kcbgsbjbyh0000gn/T/tmp09h226w8",
+                "--num_players", "3",
+                "--policies", "1,2",
+            ]
+        },
+        {
+            "type": "debugpy",
+            "request": "launch",
+            "name": "Train No Thanks RL",
+            "program": "${workspaceFolder}/no_thanks_rl.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--num_players", "3",
+                "--iterations", "10000",
+                "--checkpoint_path", ""
+            ]
+        },
+        {
+            "type": "debugpy",
+            "request": "launch",
+            "name": "Train No Thanks RL Multi Policy",
+            "program": "${workspaceFolder}/no_thanks_rl_multi_policy.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--num_players", "3",
+                "--iterations", "15000",
+                "--checkpoint_path", ""
+            ]
+        },
+        {
+            "type": "debugpy",
+            "request": "launch",
+            "name": "Evaluate RL",
+            "program": "${workspaceFolder}/no_thanks_rl_eval.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--checkpoint", "/var/folders/zp/9rq_grx133ngp6kcbgsbjbyh0000gn/T/tmpb4ocikqi",
+                "--num_players", "3",
+                "--num_episodes", "1000",
+                "--render"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "type": "pickString",
+            "id": "programName",
+            "description": "Select the Python file to launch",
+            "options": [
+                "no_thanks_first_attempt.py",
+                "no_thanks_rl_play.py"
+            ]
+        }
+    ]
+}
