@@ -41,9 +41,7 @@ def main():
     ray.init(ignore_reinit_error=True)
 
     # Register the environment
-    def env_creator(config):
-        return NoThanksEnv(num_players=args.num_players)
-
+    from utils import env_creator,register_env
     register_env("no_thanks_env", env_creator)
 
     # Create a shared policy for all agents

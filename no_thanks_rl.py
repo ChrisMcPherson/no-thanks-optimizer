@@ -47,10 +47,30 @@ def main(num_players=3, iterations=100, checkpoint_path=None):
     ray.init(ignore_reinit_error=True)
 
     # Register the environment
-    def env_creator(config):
-        return NoThanksEnv(num_players=num_players)
+    # def env_creator(config):
+    #     return NoThanksEnv(num_players=num_players)
 
+    # register_env("no_thanks_env", env_creator)
+    from utils import env_creator,register_env
     register_env("no_thanks_env", env_creator)
+    from utils import create_ppo_trainer
+    trainer = create_ppo_trainer(num_players=num_players, policies=policies)
+    # trainer = config.build()
+
+    # Restore from checkpoint if provided and not empty string
+    if checkpoint_path and checkpoint_path != "":
+        try:
+            trainer.restore(checkpoint_path)
+            print(f"Restored trainer state from checkpoint: {checkpoint_path}")
+
+            # Optionally modify hyperparameters after restoring
+            # For example, adjust learning rate or entropy coefficient
+            # trainer.get_policy().config['lr'] = 1e-5  # New learning rate
+            # trainer.get_policy().config['entropy_coeff'] = 0.0005  # New entropy coefficient
+
+        except Exception as e:
+            print(f"Failed to restore from checkpoint: {e}")
+            sys.exit(1)
 
     # Create a shared policy for all agents
     temp_env = NoThanksEnv(num_players=num_players)

@@ -47,9 +47,8 @@ def main(num_players=3, iterations=100, checkpoint_path=None):
     ray.init(ignore_reinit_error=True)
 
     # Register the environment
-    def env_creator(config):
-        return NoThanksEnv(num_players=num_players)
-
+    from utils import env_creator,register_env
+    from utils import NoThanksEnv, env_creator, register_env
     register_env("no_thanks_env", env_creator)
 
     # Create a temporary environment instance to access observation and action spaces

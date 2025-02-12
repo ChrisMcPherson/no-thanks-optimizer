@@ -1,13 +1,11 @@
+from utils import NoThanksEnv, _cards_to_binary,_get_agent_observation,get_agent_score,_get_obs,calculate_adjusted_card_value,calculate_agent_score,calculate_final_scores,calculate_total_points,render,close
 import random
 import numpy as np
 from gymnasium import spaces
 from ray.rllib.env.multi_agent_env import MultiAgentEnv
 
-class NoThanksEnv(MultiAgentEnv):
-    def __init__(self, config=None, num_players=3):
-        super().__init__()
-        self.num_players = num_players
-        self.player_ids = [f"player_{i}" for i in range(num_players)]
+class CustomNoThanksEnv(NoThanksEnv):
+    pass
 
         # Define observation and action spaces
         num_opponents = self.num_players - 1
